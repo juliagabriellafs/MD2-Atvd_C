@@ -110,7 +110,6 @@ int main() {
         int e = expoentes[i];
         
         // Calcular a potência
-        // *** CORREÇÃO APLICADA AQUI ***
         long long potencia = calcular_potencia_int(p, e + 1);
         long long termo = (potencia - 1) / (p - 1);
         sigma_N = sigma_N * termo;
@@ -133,4 +132,5 @@ int main() {
     printf("Razao de Eficiencia(%d) = sigma(%d) / tau(%d) = %lld / %d = %.2f\n", N_entrada, N_entrada, N_entrada, sigma_N, tau_N, razao);
 
     return 0;
+
 }
