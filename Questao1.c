@@ -266,8 +266,11 @@ int main() {
     char mensagem_limpa[256];
     printf("Digite a mensagem a ser criptografada (A-Z, espacos): ");
     scanf(" %[^\n]s", mensagem_original);
-
+        
     // Limpa a mensagem (converte para maiúsculas) para simplificar
+    //JUSTIFICATIVA DA NORMALIZAÇAO: O sistema de pre-codificacao [A=11..Z=36] nao suporta letras minusculas.
+        //A mensagem sera convertida para maiusculas para se adequar ao sistema exigido.
+        //A verificacao final de identidade sera feita contra esta versao normalizada.
     int j = 0;
     for (int i = 0; mensagem_original[i] != '\0'; i++) {
         if (isalpha(mensagem_original[i]) || mensagem_original[i] == ' ') {
@@ -318,3 +321,4 @@ int main() {
 
     return 0;
 }
+
